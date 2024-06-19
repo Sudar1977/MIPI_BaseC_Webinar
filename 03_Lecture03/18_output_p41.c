@@ -2,16 +2,16 @@
 
 int main(void)
 {
-    int a=1, b=5, c=123
-                    printf ("%d", c);
+    int a=1, b=5, c=123;
+    printf ("%d\n", c);
     //123
 
-    printf ("Result: %d", c);
+    printf ("Result: %d\n", c);
     //Result: 123
 
-    printf ("%d+%d=%d", a, b, c );
+    printf ("%d+%d=%d\n", a, b, c );
     //1+5=123
 
-    printf ("%d+%d=%d", a, b, a+b );
+    printf ("%d+%d=%d\n", a, b, a+b );
     //1+5=6
 }
