@@ -4,9 +4,9 @@
 
 int main(int argc, char **argv)
 {
-float a,b,c;
-float B,d;
-float X1,X2;
+    float a,b,c;
+    float B,d;
+    float X1,X2;
     setlocale(LC_ALL, "Rus");
     printf("Вычисление корней квадратного уравнения\"a*x*x+b*x+с=0\"\n");
     printf("Введите a:\n");
@@ -42,7 +42,7 @@ float X1,X2;
         }
         else
         {
-        printf("Корней НЕТ!\n");
+            printf("Корней НЕТ!\n");
         }
     }
     return 0;

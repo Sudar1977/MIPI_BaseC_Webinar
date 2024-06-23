@@ -8,6 +8,10 @@ int main()
     // короткая запись if else
     //условная операция
     max = a>b ? a : b;
+    //~ if(a>b)
+        //~ max = a;
+    //~ else
+        //~ max = b;
     printf("%d",max);
     return 0;
 }

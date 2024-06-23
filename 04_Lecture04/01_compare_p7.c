@@ -6,6 +6,6 @@ int main()
     int a, b;
     a = 5 == 3; // a=0
     b = 100 >= 1; // b=1
-    printf("%d %d",a,b);
+    printf("a=%d b=%d",a,b);
     return 0;
 }
