@@ -2,12 +2,13 @@
 
 int prime(int n)
 {
-    int i=2;
-    while (i*i<=n)
+    //~ int i=2;
+    //~ while (i*i<=n)
+    for(int i=2;i*i<=n;i++)
     {
         if (n%i==0)
             return 0;
-            i++;
+        //~ i++;
     }
     return 1;
 }

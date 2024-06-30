@@ -10,6 +10,6 @@ int main ()
 {
     int a,b;
     scanf ("%d%d", &a,&b);
-    printf ("max = %d\n", max (a,b));
+    printf ("max = %d\n", max(a,b));
     return 0;
 }

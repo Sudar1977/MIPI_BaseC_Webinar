@@ -1,4 +1,4 @@
-#include <stdio.h>
+п»ї#include <stdio.h>
 #include <conio.h>
 #include <locale.h>
 #include <math.h>
@@ -16,7 +16,7 @@ static int counter = 0;
 void CalcRealRoots(float sqrD,float B,float a)
 {
 float X1,X2;
-    printf("Корни квадратного уравнения \n");
+    printf("РљРѕСЂРЅРё РєРІР°РґСЂР°С‚РЅРѕРіРѕ СѓСЂР°РІРЅРµРЅРёСЏ \n");
     float d = sqrtf(sqrD);
     X1 = (-B + d)/a; //2
     printf("X1 = %f \n",X1);
@@ -24,20 +24,20 @@ float X1,X2;
     printf("X2 = %f \n",X2);
 }
 
-//Сделаем вычисление корней квадратного уравнения отдельной функцией.
+//РЎРґРµР»Р°РµРј РІС‹С‡РёСЃР»РµРЅРёРµ РєРѕСЂРЅРµР№ РєРІР°РґСЂР°С‚РЅРѕРіРѕ СѓСЂР°РІРЅРµРЅРёСЏ РѕС‚РґРµР»СЊРЅРѕР№ С„СѓРЅРєС†РёРµР№.
 void SquareEquation(void)
 {
-    printf("Вычисление корней квадратного уравнения \\ \"a*x*x+b*x+с=0\"\n");
-    float a = InputFloat("Введите a:\n");//1
-    float b = InputFloat("Введите b:\n");//18
-    float c = InputFloat("Введите c:\n");//32
+    printf("Р’С‹С‡РёСЃР»РµРЅРёРµ РєРѕСЂРЅРµР№ РєРІР°РґСЂР°С‚РЅРѕРіРѕ СѓСЂР°РІРЅРµРЅРёСЏ \\ \"a*x*x+b*x+СЃ=0\"\n");
+    float a = InputFloat("Р’РІРµРґРёС‚Рµ a:\n");//1
+    float b = InputFloat("Р’РІРµРґРёС‚Рµ b:\n");//18
+    float c = InputFloat("Р’РІРµРґРёС‚Рµ c:\n");//32
     float B = b/2;
     if(a!=0)
     {
         float d = B*B-a*c;
         if(d<0)
         {
-            printf("Корни квадратного уравнения комплексные \n");
+            printf("РљРѕСЂРЅРё РєРІР°РґСЂР°С‚РЅРѕРіРѕ СѓСЂР°РІРЅРµРЅРёСЏ РєРѕРјРїР»РµРєСЃРЅС‹Рµ \n");
         }
         else
         {
@@ -49,11 +49,11 @@ void SquareEquation(void)
         if(b!=0)
         {
             float X1 = -c/b;
-            printf("Корень линейного уравнения %f\n",X1);
+            printf("РљРѕСЂРµРЅСЊ Р»РёРЅРµР№РЅРѕРіРѕ СѓСЂР°РІРЅРµРЅРёСЏ %f\n",X1);
         }
         else
         {
-            printf("Корней НЕТ!\n");
+            printf("РљРѕСЂРЅРµР№ РќР•Рў!\n");
         }
     }
 }
@@ -61,12 +61,12 @@ void SquareEquation(void)
 int main(int argc, char **argv)
 {
 char Choice;
-    setlocale(LC_ALL, "Rus");
+    setlocale(LC_ALL, ".utf-8");
     while(1)
     {
-        printf("1. Вычисление корней квадратного уравнения\n");
-        printf("0. Выход\n");
-        printf("Для выход нажмите Q\n");
+        printf("1. Р’С‹С‡РёСЃР»РµРЅРёРµ РєРѕСЂРЅРµР№ РєРІР°РґСЂР°С‚РЅРѕРіРѕ СѓСЂР°РІРЅРµРЅРёСЏ\n");
+        printf("0. Р’С‹С…РѕРґ\n");
+        printf("Р”Р»СЏ РІС‹С…РѕРґ РЅР°Р¶РјРёС‚Рµ Q\n");
         Choice = getch();
         switch(Choice)
         {
@@ -79,7 +79,7 @@ char Choice;
                 return 0;
                 break;
             default:
-                printf("Непонятный выбор %x\n",Choice);
+                printf("РќРµРїРѕРЅСЏС‚РЅС‹Р№ РІС‹Р±РѕСЂ %x\n",Choice);
                 break;
         }
     }
