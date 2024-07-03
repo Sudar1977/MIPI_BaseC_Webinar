@@ -3,6 +3,7 @@
 
 int main() {
     int a = 77;
+    printf("%d\n",a);// << std::endl; // 88
     int *ptrA = &a;
     int** ppA = &ptrA;
     *ptrA = 88;

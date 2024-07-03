@@ -16,7 +16,7 @@ int fibonachi(int n)
         return 1;
     }
 
- int Fib = fibonachi(n - 1)+ fibonachi(n - 2);
+    int Fib = fibonachi(n - 1)+ fibonachi(n - 2);
     printf("Fib(%d)=%d\n",n,Fib);
     return Fib;
 }
