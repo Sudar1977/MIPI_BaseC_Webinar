@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <inttypes.h>
 
-int main( )
+int main(void)
 {
-    unsigned int a=0xAABBCCFF;
+    uint32_t a=0xAABBCCFF;
     a = a>>3;
     a = a<<3;
     printf("a = %x", a);
