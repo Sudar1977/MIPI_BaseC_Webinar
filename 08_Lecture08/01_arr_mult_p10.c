@@ -3,7 +3,7 @@
 
 #define SIZE 5
 
-int Input(int* arr, int n)
+int Input(int arr[], int n)
 {
     int i;
     for(i=0;i<n;i++)
@@ -11,7 +11,7 @@ int Input(int* arr, int n)
     return i;
 }
 
-void Print(int *arr,int len)
+void Print(int arr[],int len)
 {
     int i;
     for (i = 0; i < len; i++)
@@ -19,7 +19,7 @@ void Print(int *arr,int len)
     printf("\n");
 }
 
-void Mult(int *arr,int len,int k)
+void Mult(int arr[],int len,int k)
 {
     int i;
     for (i = 0; i < len; i++)

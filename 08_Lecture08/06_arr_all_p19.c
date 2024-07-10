@@ -4,8 +4,9 @@
 #define SIZE 5
 #define COEF 3
 
-int Input(int* arr, int n)
+int Input(int arr[], int n)
 {
+    //~ static int test[3] = {0};
     int i;
     for(i=0;i<n;i++)
         scanf("%d",&arr[i]);
@@ -92,7 +93,7 @@ void BubbleSort(int* arr,int n)
 int main(void)
 {
     int arr[SIZE];
-    Input(arr,SIZE);
+    Input(&arr[0],SIZE);
     Mult(arr,SIZE,COEF);
     Print(arr,SIZE);
     printf("Min = %d\n",Min(arr,SIZE));
