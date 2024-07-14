@@ -15,7 +15,7 @@ int main(void)
     printf("Array:\n");
     for (i = 0; i < SIZE; i++ )
     {
-        a[i] = random_number(100) + 50;
+        a[i] = random_number(100) - 50;
         printf("%4d", a[i]);
     }
     return 0;

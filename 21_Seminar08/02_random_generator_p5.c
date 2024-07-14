@@ -11,7 +11,7 @@ int random_number(int n)
 void init_array(int size, int a[], int max_random)
 {
     for (size_t i = 0;i<size;i++)
-        a[i]=random_number(max_random);
+        a[i]=random_number(max_random) - max_random/2;
 }
 
 void print_array(int size, int a[])
@@ -23,7 +23,7 @@ void print_array(int size, int a[])
 
 int main(void)
 {
-    int a[SIZE], i;
+    int a[SIZE];
     srand(SEED);
     init_array(SIZE, a, 100);
     print_array(SIZE,a);

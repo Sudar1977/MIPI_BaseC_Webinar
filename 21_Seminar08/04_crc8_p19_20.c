@@ -23,9 +23,11 @@ unsigned char Crc8(unsigned char*pcBlock, unsigned int len)
 
 int main(int argc, char **argv)
 {
-    unsigned char arr[] =
-    {'1','2','3','4','5','6','7','8','9'};
-    printf("%x ",Crc8(arr,9));
+    unsigned char arr[] =  {'1','2','3','4','5','6','7','8','9',0};
+    arr[9] = Crc8(arr,9);
+    printf("%x \n",Crc8(arr,9));
+    arr[3]=7;
+    printf("%x \n",Crc8(arr,9));    
     return 0;
 }
 

@@ -4,7 +4,7 @@
 
 int main(int argc, char* argv[]) 
 { 
-    uint8_t start = 0x02; 
+    uint8_t start = 0x08; 
     uint8_t a = start; 
     int i;
     for (i = 1;; i++) 
