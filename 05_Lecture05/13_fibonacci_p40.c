@@ -2,7 +2,7 @@
 
 int main( void )
 {
-    int n, i, f1, f2, m;
+    unsigned int n, i, f1, f2, m;
     scanf("%d", &n);
     f1 = 1;
     f2 = 1;
@@ -16,7 +16,7 @@ int main( void )
                 m = f1 + f2;
                 f1 = f2;
                 f2 = m;
-                printf("%d ", f2);
+                printf("%u ", f2);
             }
         }
     return 0;

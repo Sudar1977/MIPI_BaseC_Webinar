@@ -2,10 +2,12 @@
 
 int main() {
     char c;
-    for(;;) {
+    for(;;)//while(1)
+    {
         printf( "\nPress any key, Q to quit: " );
         // Convert to character value
         scanf("%c", &c);
+        printf("%x\n",c);
         if (c == 'Q')
             break;
     }

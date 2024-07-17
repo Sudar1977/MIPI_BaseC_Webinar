@@ -3,7 +3,7 @@
 
 int main(void) {
     char st[10] = "hello";
-    printf("Sizeof = %u\n", sizeof(st));
-    printf("Strlen = %u\n", strlen(st));
+    printf("Sizeof = %llu\n", sizeof(st));
+    printf("Strlen = %llu\n", strlen(st));
     return 0;
 }

@@ -2,9 +2,9 @@
 
 int main()
 {
-    int n;
-    n=0;
-    while (n!=5) { // лучше n<5
+    int n = 0;
+    while (n!=5)// лучше n<5
+    {
         printf("Hello\n");
         n++; // n = n+1
     }

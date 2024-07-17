@@ -7,9 +7,9 @@ int main ()
     scanf ("%d", &input);
     count = 0;
     n = input;
-    while (n != 0)
+    while (n != 0)//n>0
     {
-        count ++;
+        count++;
         n = n / 10; // Отбросили одну цифру
     }
     printf ("In %d fount %d digits", input, count);
