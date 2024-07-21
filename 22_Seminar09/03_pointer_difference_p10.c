@@ -6,6 +6,6 @@ int main()
     int *pa, *qa;
     pa = &a[1];
     qa = &a[3];
-    printf("%d\n", qa-pa);
+    printf("%p - %p = %lld\n",qa,pa, qa-pa);
     return 0;
 }
