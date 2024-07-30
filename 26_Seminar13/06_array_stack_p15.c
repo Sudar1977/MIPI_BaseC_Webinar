@@ -1,4 +1,4 @@
-#include <stdio.h> 
+#include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
 
@@ -13,13 +13,12 @@ struct sensor
     int8_t t;
 };
 
-int main(int argc, char **argv) 
-{ 
-struct sensor info[SIZE];
-struct sensor* info1 = 
-malloc(SIZE*sizeof(struct sensor));
-if(!info1)
-    return -1;
-free(info1);
- return 0; 
+int main(int argc, char **argv)
+{
+    struct sensor info[SIZE];
+    struct sensor* info1 = malloc(SIZE*sizeof(struct sensor));
+    if(!info1)
+        return -1;
+    free(info1);
+    return 0;
 }

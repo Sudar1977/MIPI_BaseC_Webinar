@@ -9,7 +9,7 @@ int main(int argc, char **argv)
     open = fopen(name, "r");
         if(open==NULL)
             return 1;
- int counter = 0;
+int counter = 0;
 int arr[3] = {0};
 char ch;
     while((ch=fgetc(open))!=EOF)

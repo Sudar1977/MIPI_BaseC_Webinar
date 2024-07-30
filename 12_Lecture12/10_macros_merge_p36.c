@@ -5,8 +5,8 @@
 
 int main(void)
 {
-    MERGE(d,o) // do
-    MERGE(a,2) // a2
-    MERGE(+,+) // ++
+    MERGE(d,o); // do
+    MERGE(a,2); // a2
+    MERGE(+,+); // ++
     return 0;
 }
