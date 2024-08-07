@@ -13,5 +13,10 @@ int main()
     printf(" in memory is: %x %x %x %x\n", d.bytes[0],
     d.bytes[1], d.bytes[2], d.bytes[3]);
     // Number 12345678 in memory is: 78 56 34 12
+    uint32_t number = 0x12345678;
+    
+    printf(" in memory is: %x\n",(number >> 8)&0xff);
+    
+    
     return 0;
 }

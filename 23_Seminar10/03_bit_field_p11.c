@@ -10,6 +10,6 @@ int main(void)
 {
     struct point center = {0, 5};
     center.x = 2;
-    printf("x=%d y=%d \n", center.x, center.y); // x=2 y=5
+    printf("x=%d y=%d size=%llu \n", center.x, center.y,sizeof(center)); // x=2 y=5
     return 0;
 }
