@@ -1,4 +1,4 @@
-#include "mylibrary.h"
+#include "func.h"
 
 int max(int a, int b)
 {

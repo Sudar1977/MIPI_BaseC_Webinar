@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "mylibrary.h"
+#include "func.h"
 
 int m;
 
