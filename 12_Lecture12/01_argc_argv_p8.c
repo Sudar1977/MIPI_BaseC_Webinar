@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
                     printf("HELP\n");
                 break;
                 case 's':
-                    scanf(argv[i+1],"%d",&size);
+                    sscanf(argv[i+1],"%d",&size);
                     printf("%d %s %d\n",size,argv[i+1],i+1);
                 break;
                 default:

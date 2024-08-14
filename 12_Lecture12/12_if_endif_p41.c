@@ -3,13 +3,14 @@
 #define DEBUG
 
 #if defined DEBUG
-    #define DEBUGPRINT fprintf (stderr, "debug in %d line func: %s\n", __LINE__, __func__)
+#define DEBUGPRINT fprintf(stderr, "debug in %d line func: %s\n", __LINE__, __func__)
 #else
-    #define DEBUGPRINT
+#define DEBUGPRINT
 #endif
 
-int main(void){
-    int a=5, b=7;
+int main(void)
+{
+    int a = 5, b = 7;
     DEBUGPRINT;
     printf("a = %d b = %d\n", a, b);
     return 0;
