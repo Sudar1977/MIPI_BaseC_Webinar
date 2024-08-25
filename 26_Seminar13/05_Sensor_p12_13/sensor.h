@@ -3,10 +3,11 @@
 
 struct sensor
 {
- uint8_t day;
- uint8_t month;
- uint16_t year;
- int8_t t;
+    uint8_t day;
+    uint8_t month;
+    uint16_t year;
+    uint8_t hour;
+    int8_t t;
 };
 
 void cgangeIJ(struct sensor* info,int i,int j);
@@ -16,6 +17,7 @@ unsigned int DateToInt(struct sensor* info);
 //упорядочивающую его по дате
 void SortByDate(struct sensor* info,int n);
 void AddRecord(struct sensor* info,int number,
-uint16_t year,uint8_t month,uint8_t day,int8_t t);
+uint16_t year,uint8_t month,uint8_t day,uint8_t hour,int8_t t);
 int AddInfo(struct sensor* info);
 void print(struct sensor* info,int number);
+int CompareDate(const void *x,const void *y);

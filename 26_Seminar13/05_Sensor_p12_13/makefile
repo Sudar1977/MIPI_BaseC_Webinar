@@ -10,5 +10,5 @@ sensor.o: sensor.c
 	gcc -c -std=c99 -o sensor.o sensor.c
 
 clean:
-	del *.o
-	del sensor_demo.exe
+	rm *.o
+	rm sensor_demo.exe

@@ -15,7 +15,7 @@ struct sensor
 
 int main(int argc, char **argv)
 {
-    struct sensor info[SIZE];
+    static struct sensor info[SIZE];
     struct sensor* info1 = malloc(SIZE*sizeof(struct sensor));
     if(!info1)
         return -1;

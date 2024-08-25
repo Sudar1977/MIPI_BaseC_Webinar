@@ -3,7 +3,7 @@
 int main(int argc, char **argv)
 {
     FILE *open;
-    char name[] = "temperature_small1.csv";
+    char name[] = "temperature_small2.csv";
     open = fopen(name, "r");
     if(open==NULL)
         return 1;

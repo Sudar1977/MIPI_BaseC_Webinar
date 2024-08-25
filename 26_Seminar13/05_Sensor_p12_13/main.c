@@ -12,6 +12,7 @@ int number=AddInfo(info);
     print(info,number);
     printf("\nSort by date\n");
     SortByDate(info,number);
+    // qsort(info,number,sizeof(info[0]),CompareDate);
     print(info,number);
     return 0;
 }
