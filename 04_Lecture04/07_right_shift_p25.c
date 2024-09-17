@@ -3,9 +3,9 @@
 
 int main()
 {
-    unsigned int u=0xaabbccdd;
-    printf("%X\n",u); // 0aabbccdd
+    uint32_t u=0xaabbccdd;
+    printf("0x%X\n",u); // 0aabbccdd
     u = u>>4; // логический сдвиг
-    printf("%0X\n",u); // 0aabbccd
+    printf("0x%08X\n",u); // 0aabbccd
     return 0;
 }

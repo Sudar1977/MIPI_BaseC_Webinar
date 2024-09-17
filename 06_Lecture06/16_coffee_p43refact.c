@@ -10,7 +10,7 @@ enum signals GetUserSignal(void)
     while(1)
     {
         printf("1.Put 1 rubl\n2.Put 2 rubl\n0.Cancel\n");
-        Choice = getch();
+        Choice = _getch();
         switch(Choice)
         {
         case '1':

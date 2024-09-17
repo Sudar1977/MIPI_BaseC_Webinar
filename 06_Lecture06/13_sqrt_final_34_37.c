@@ -67,7 +67,7 @@ char Choice;
         printf("1. Вычисление корней квадратного уравнения\n");
         printf("0. Выход\n");
         printf("Для выход нажмите Q\n");
-        Choice = getch();
+        Choice = _getch();
         switch(Choice)
         {
             case '1':
