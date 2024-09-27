@@ -14,7 +14,7 @@ int main()
     case 2:
         printf("case 2:\n");
         a *= 2 ; // Если expr == 2, то выполнится a += 5; из следующей  ветки
-    break;
+    //~ break;
     case 3:
         a += 5;
     break; // А здесь произойдет выход
