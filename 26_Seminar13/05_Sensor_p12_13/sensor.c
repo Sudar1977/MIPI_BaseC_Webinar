@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "sensor.h"
-#include <string.h>
+#include <inttypes.h>
 
 void cgangeIJ(struct sensor *info, int i, int j)
 {
@@ -18,7 +18,7 @@ void SortByT(struct sensor *info, int n)
                 cgangeIJ(info, i, j);
 }
 
-int CompareDate(const void *x,const void *y)
+int CompareDate(const void *x, const void *y)
 {
     struct sensor *a = (struct sensor *)x;
     struct sensor *b = (struct sensor *)y;
@@ -39,13 +39,25 @@ unsigned int DateToInt(struct sensor *info)
 {
     return info->year << 16 | info->month << 8 | info->day;
 }
+
+uint64_t DateToInt64(struct sensor *info)
+{
+    uint8_t h = 1, m = 2, s = 3;
+    uint64_t result;
+    result = (uint64_t)info->year << 40 | (uint64_t)info->month << 32 | 
+             (uint64_t)info->day << 24  |
+             h << 16 | m << 8 | s;
+    printf("%"PRIx64"\n",result);
+    return result;
+}
+
 // упорядочивающую его по дате
 void SortByDate(struct sensor *info, int n)
 {
     for (int i = 0; i < n; ++i)
         for (int j = i; j < n; ++j)
-            if (CompareDate(info + i, info + j) > 0)
-                //~ if(DateToInt(info+i)>= DateToInt(info+j))
+            // if (CompareDate(info + i, info + j) > 0)
+            if (DateToInt64(info + i) >= DateToInt64(info + j))
                 cgangeIJ(info, i, j);
 }
 void AddRecord(struct sensor *info, int number, uint16_t year, uint8_t month, uint8_t day, uint8_t hour, int8_t t)

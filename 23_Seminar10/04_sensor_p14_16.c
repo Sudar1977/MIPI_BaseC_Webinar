@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
+#include <stdlib.h>
 
 #define SIZE 30
 
@@ -11,7 +12,8 @@ struct sensor {
  int8_t t;
 };
 
-void cgangeIJ(struct sensor* info,int i, int j){
+void cgangeIJ(struct sensor info[],int i, int j)
+{
 struct sensor temp;
     temp=info[i];
     info[i]=info[j];
@@ -27,16 +29,33 @@ void SortByT(struct sensor* info,int n){
 
 unsigned int DateToInt(struct sensor* info){
     return info->year << 16 | info->month << 8 | info->day;
+    //~ return info->year*366+info->month*12+info->day;
+    
 }
+
+//~ int Compare(struct sensor* a,struct sensor* b)
+int Compare(const void* ta,const void* tb)
+{
+    struct sensor* a = (struct sensor*)ta;
+    struct sensor* b = (struct sensor*)tb;
+    if(a->year != b->year)
+        return a->year - b->year;
+    else if (a->month != b->month)
+        return a->month - b->month;
+    else 
+        return a->day - b->day;
+}
+
 //упорядочивающую его по дате
 void SortByDate(struct sensor* info,int n){
     for(int i=0; i<n; ++i)
         for(int j=i; j<n; ++j)
-            if(DateToInt(info+i)>= DateToInt(info+j))
+            if(Compare(info+i,info+j)>0)
+            //~ if(DateToInt(info+i)>= DateToInt(info+j))
                 cgangeIJ(info,i,j);
 }
 
-void AddRecord(struct sensor* info,int number,
+void AddRecord(struct sensor info[],int number,
 uint16_t year,uint8_t month,uint8_t day,int8_t t){
     info[number].year = year;
     info[number].month = month;
@@ -80,7 +99,7 @@ void save_bin_d(struct data* d)
 {
     FILE* f = fopen("sensor.bin","wb");
     fwrite(&d->number,sizeof(d->number),1,f);
-    fwrite(d->info,d->number*sizeof(struct sensor),1,f);
+    fwrite(d->info,d->number*sizeof(d->info[0]),1,f);
     fclose(f);
 }
 
@@ -105,16 +124,17 @@ void print(struct sensor* info,int number){
 
 int main(void)
 {
-    d.number=AddInfo(d.info);
+    d.number=AddInfo(d.info);// ctrl+e
     print(d.info,d.number);
-    save_bin(d.info,d.number);
+    save_bin_d(&d);
     printf("\nSort by t\n");
     SortByT(d.info,d.number);
     print(d.info,d.number);
     printf("\nSort by date\n");
-    SortByDate(d.info,d.number);
+    //~ SortByDate(d.info,d.number);
+    qsort(d.info,d.number,sizeof(d.info[0]),Compare);
     print(d.info,d.number);
-    load_bin(d.info,d.number);
+    load_bin_d(&d);
     print(d.info,d.number);
     return 0;
 }

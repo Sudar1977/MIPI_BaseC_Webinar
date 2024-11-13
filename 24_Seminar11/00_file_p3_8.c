@@ -9,7 +9,7 @@ enum {PATH_LENGTH=256};
 #define STR255 "%255s"
 
 void convert_path_to_full(char *full_path, const char *dir) {
-        if(dir[0]=='/') {
+    if(dir[0]=='/') {
         strcpy(full_path, dir);
     } else if (dir[0]=='.') {
         getcwd(full_path,PATH_LENGTH);
@@ -67,19 +67,19 @@ void ls(const char *dir) {
     DIR *folder;
     struct dirent *entry;
     int files_number = 0;
-    char full_path[PATH_LENGTH]={0};
+    char full_path[PATH_LENGTH]= {0};
     convert_path_to_full(full_path, dir);
     folder = opendir(full_path);
-    if(folder == NULL){
+    if(folder == NULL) {
         perror("Unable to read directory");
         printf("%s\n",full_path);
         return;
     }
-   while( (entry=readdir(folder)) ) {
+    while( (entry=readdir(folder)) ) {
         if( entry->d_name[0]=='.' )// пропускаем поддиректории
             continue;
-        char full_filename[PATH_LENGTH]={0};
-                files_number++;
+        char full_filename[PATH_LENGTH]= {0};
+        files_number++;
         print_tab(tab_count);//отступы при рекурсии
         printf("%4d : ",files_number);
         //print_filetype(entry->d_type);
@@ -88,7 +88,7 @@ void ls(const char *dir) {
         strcat(full_filename, entry->d_name);
         printf("%s", entry->d_name);
         print_space(20, entry->d_namlen);
-        if (!stat(full_filename, &file_stats)){
+        if (!stat(full_filename, &file_stats)) {
             print_file_size(file_stats.st_size);
             printf("\n");
         }
@@ -101,13 +101,31 @@ void ls(const char *dir) {
     tab_count--;
 }
 
-int main(void)
-{
+int main(int argc, char *argv[]) {
     char dir[PATH_LENGTH], buf[PATH_LENGTH];
-    printf("Input dir: ");
-    scanf(STR255,dir);
-    convert_path_to_full(buf, dir);
-    printf("ls for folder %s\n",buf);
-    ls(dir);
+    int rez=0;
+    //    opterr=0;
+    while ( (rez = getopt(argc,argv,"hf:")) != -1) {
+        switch (rez) {
+        case 'h':
+            printf("This is example of list directory\n");
+            printf("Usage: clear [options]\n\
+        -h This help text\n\
+        -f Specify folder.\n");
+            printf("Example: %s -f /tmp\n",argv[0]);
+            return 0;
+        case 'f': //printf("folder is \"f = %s\".\n",optarg);
+            strcpy(dir, optarg);
+            convert_path_to_full(buf, dir);
+            printf("ls for folder %s\n",buf);
+            ls(dir);
+            return 0;
+            break;
+        case '?':
+            printf("Unknown argument: %s Try -h for help\n", argv[optind-1]);
+            return 1;
+        };
+    };
+    printf("-h help text\n");
     return 0;
 }
