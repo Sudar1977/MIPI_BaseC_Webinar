@@ -1,0 +1,14 @@
+CC = gcc
+
+all: prog
+
+objects = main.o func.o
+
+prog: $(objects)
+	$(CC) -o prog $(objects)
+
+%.o : %.c 
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
+
+clean:
+	del prog.exe $(objects)

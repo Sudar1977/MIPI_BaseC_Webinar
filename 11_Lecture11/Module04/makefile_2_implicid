@@ -1,0 +1,13 @@
+all: prog
+
+objects = main.o func.o
+
+prog: $(objects)
+	gcc -o prog $(objects)
+
+main.o: mylibrary.h
+
+func.o: 
+
+clean:
+	del prog.exe $(objects)
