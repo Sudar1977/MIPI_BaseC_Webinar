@@ -23,7 +23,7 @@ void convert_path_to_full(char *full_path, const char *dir) {
         strcat(full_path,"/");// добавляем / в конце
 }
 
-#if LINUX
+#if defined __linux__
 void print_filetype(int type) {
     switch (type) {
         case DT_BLK:  printf("b "); break;
@@ -84,14 +84,19 @@ void ls(const char *dir) {
         files_number++;
         print_tab(tab_count);//отступы при рекурсии
         printf("%4d : ",files_number);
-#if LINUX
+#if defined __linux__
         //не работает для Windows
-        //print_filetype(entry->d_type);
+        //printf("LINUX!!!\n");
+        print_filetype(entry->d_type);
 #endif
         strcpy(full_filename, full_path);
         strcat(full_filename, entry->d_name);
         printf("%s", entry->d_name);
+#if defined __linux__
+        print_space(20, strlen(entry->d_name));
+#else
         print_space(20, entry->d_namlen);
+#endif
         if (!stat(full_filename, &file_stats)) {
             print_file_size(file_stats.st_size);
             printf("\n");
