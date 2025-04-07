@@ -6,7 +6,7 @@
 int comparator (const int *, const int *);
 
 /* сравнение двух целых V1 */
-int comparator (const int *a, const int *b) 
+int comparator (const int *a, const int *b)
 {
     return *a - *b;
     //~ return *b - *a;//обрасный порядок
@@ -32,8 +32,9 @@ int main(void)
 {
     int a[SIZE]={3,5,3,2,1};
     print(SIZE,a);
-    
+
     //~ qsort(a, SIZE, sizeof(int),comparator);
+    //~ qsort(a, SIZE, sizeof (int), (int(*) (const void *, const void *)) comparator);
     qsort(a, SIZE, sizeof (int), (int(*) (const void *, const void *)) comparator);
     print(SIZE,a);
 }

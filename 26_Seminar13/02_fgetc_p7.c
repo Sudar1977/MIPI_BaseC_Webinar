@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 int Y,M,D;
 int r;
 char ch=0;
-    while((r = fscanf(open, "%d;%d;%d",&Y,&M,&D))>0)
+    while((r = fscanf(open, "%d;%d;%d",&Y,&M,&D))>=0)
     {
         if(r<N)
         {

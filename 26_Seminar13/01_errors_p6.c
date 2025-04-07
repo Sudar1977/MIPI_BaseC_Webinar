@@ -11,7 +11,7 @@ int main(int argc, char **argv)
         return 1;
 int Y,M,D;
 int r;
-    while((r = fscanf(open, "%d;%d;%d",&Y,&M,&D))>0)
+    while((r = fscanf(open, "%d;%d;%d",&Y,&M,&D))>=0)
     {
         printf(".");
         if(r<N)

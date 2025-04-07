@@ -8,6 +8,8 @@ enum {PATH_LENGTH=256};
 
 #define STR255 "%255s"
 
+#define LINUX 0
+
 void convert_path_to_full(char *full_path, const char *dir) {
     if(dir[0]=='/') {
         strcpy(full_path, dir);
@@ -23,14 +25,14 @@ void convert_path_to_full(char *full_path, const char *dir) {
         strcat(full_path,"/");// добавляем / в конце
 }
 
-#if LINUX
+#if __linux__
 void print_filetype(int type) {
     switch (type) {
         case DT_BLK:  printf("b "); break;
         case DT_CHR:  printf("c "); break;
         case DT_DIR:  printf("d "); break; //directory
         case DT_FIFO:  printf("p "); break; //fifo
-        case DT_LNK:  printf("l "); break; //Sym link
+        case DT_LNK:  printf("l "); break; /*Sym link*/
         case DT_SOCK: printf("s "); break; //Filetype isn't identified
         default:       printf("  "); break;
     }
@@ -84,9 +86,9 @@ void ls(const char *dir) {
         files_number++;
         print_tab(tab_count);//отступы при рекурсии
         printf("%4d : ",files_number);
-#if LINUX
+#if __linux__
         //не работает для Windows
-        //print_filetype(entry->d_type);
+        print_filetype(entry->d_type);
 #endif
         strcpy(full_filename, full_path);
         strcat(full_filename, entry->d_name);
