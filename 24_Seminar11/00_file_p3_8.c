@@ -4,6 +4,8 @@
 #include <string.h>
 #include <stdint.h>
 #include <unistd.h>
+#include <locale.h>
+
 enum {PATH_LENGTH=256};
 
 #define STR255 "%255s"
@@ -108,6 +110,7 @@ void ls(const char *dir) {
 }
 
 int main(int argc, char *argv[]) {
+    setlocale(LC_ALL,".Utf-8");
     char dir[PATH_LENGTH], buf[PATH_LENGTH];
     int rez=0;
     //    opterr=0;

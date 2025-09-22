@@ -30,19 +30,16 @@ void SortByT(struct sensor* info,int n){
 unsigned int DateToInt(struct sensor* info){
     return info->year << 16 | info->month << 8 | info->day;
     //~ return info->year*366+info->month*12+info->day;
-    
+
 }
 
-//~ int Compare(struct sensor* a,struct sensor* b)
-int Compare(const void* ta,const void* tb)
+int Compare(struct sensor* a,struct sensor* b)
 {
-    struct sensor* a = (struct sensor*)ta;
-    struct sensor* b = (struct sensor*)tb;
     if(a->year != b->year)
         return a->year - b->year;
     else if (a->month != b->month)
         return a->month - b->month;
-    else 
+    else
         return a->day - b->day;
 }
 

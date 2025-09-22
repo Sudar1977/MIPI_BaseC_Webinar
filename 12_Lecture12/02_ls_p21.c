@@ -18,9 +18,10 @@ int main(int argc, char *argv[])
         -f Specify folder.\n");
       printf("Example: %s -f /tmp\n", argv[0]);
       return 0;
-    case 'f': 
+    case 'f':
       printf("folder is \"f = %s\".\n",optarg);
       strcpy(dir, optarg);
+      printf("folder is \"f = %s\".\n",dir);
       break;
     case '?':
       printf("Unknown argument: %s Try -h for help\n", argv[optind - 1]);
