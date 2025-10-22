@@ -6,7 +6,7 @@ int main(int argc, char **argv)
 {
     float a,b,c;
     float B,d;
-    float X1,X2;
+    float x1,x2;
     setlocale(LC_ALL, ".utf-8");
     printf("Вычисление корней квадратного уравнения\"a*x*x+b*x+с=0\"\n");
     printf("Введите a:\n");
@@ -18,9 +18,9 @@ int main(int argc, char **argv)
     B = b/2;
     d = sqrtf(B*B - a*c);
     printf("Корни квадратного уравнения \n");
-    X1 = (-B + d)/a; //-2
-    printf("X1 = %f \n",X1);
-    X2 = (-B - d)/a; //-16
-    printf("X2 = %f \n",X2);
+    x1 = (-B + d)/a; //-2
+    printf("X1 = %f \n",x1);
+    x2 = (-B - d)/a; //-16
+    printf("X2 = %f \n",x2);
     return 0;
 }

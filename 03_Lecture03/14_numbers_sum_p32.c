@@ -8,4 +8,5 @@ int main()
     sum += (n/10)%10; //sum = 5
     sum += (n/100)%10; //sum = 6
     printf("%d\n",sum);
+    return 0;
 }

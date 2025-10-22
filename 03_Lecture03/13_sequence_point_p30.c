@@ -10,4 +10,5 @@ int main()
     printf("%d %d\n",a,b);
     a = (c=3) + (c=2);  // ТАК НЕЛЬЗЯ дважды модифицируется одна переменная Внимание! Attention! Atención!
     printf("%d %d\n",a,c);
+    return 0;
 }

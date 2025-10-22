@@ -8,4 +8,5 @@ int main(void)
     scanf ("%d%d", &a); //&a, &b
     scanf ("%d %d", &a, &b); // пробел не обязательно
     scanf ("%f%f", &a, &b); // %d%d
+    return 0;
 }

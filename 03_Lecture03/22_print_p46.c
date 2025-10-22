@@ -8,4 +8,5 @@ int main(void)
     printf ("a=F (%d)\n", b);
     printf ("%d>%d\n", a+b, b);
     printf ("F(%d)==G(%d)\n", b, a);
+    return 0;
 }
