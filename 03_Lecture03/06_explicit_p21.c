@@ -9,4 +9,5 @@ int main()
     //~ x = (unsigned char)c * 10 + y; // переменная С приводится к типу int
     x = c * 10 + y; // переменная С приводится к типу int
     printf("%d\n",x);
+    return 0;
 }

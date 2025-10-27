@@ -8,4 +8,5 @@ int main()
     y = a % 5; // y=2
     z = (x + 5) * y; // z=20
     printf("z=%d\n",z);
+    return 0;
 }

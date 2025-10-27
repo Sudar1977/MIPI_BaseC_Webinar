@@ -17,4 +17,5 @@ int main()
     printf("f = %f\n",x);
     x = 1.*a / 4; // 1.75
     printf("f = %f\n",x);
+    return 0;
 }
