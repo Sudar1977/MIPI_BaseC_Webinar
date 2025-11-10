@@ -1,11 +1,6 @@
 #include <stdio.h>
 
-int max (int a, int b)
-{
-    if (a>b)
-        return a;
-    return b;
-}
+int max (int a, int b);
 
 int main()
 {
@@ -14,3 +9,12 @@ int main()
     printf("max = %d\n", max(a,b));
     return 0;
 }
+
+int max (int a, int b)
+{
+    if (a>b)
+        return a;
+    return b;
+}
+
+

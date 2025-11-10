@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-void max(void)
+
+void max (void)
 {
     int a,b; //локальные переменные
     scanf("%d%d",&a,&b);
@@ -10,9 +11,8 @@ void max(void)
         printf("%d\n",b);
 }
 
-int main ()
+int main()
 {
     max();
     return 0;
 }
-

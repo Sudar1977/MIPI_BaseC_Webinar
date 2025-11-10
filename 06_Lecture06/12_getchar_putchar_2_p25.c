@@ -1,7 +1,10 @@
 #include <stdio.h>
+#include <locale.h>
+
 
 int main ()
 {
+    setlocale(LC_ALL, ".utf-8");
     char character;
     puts("Введите символ, символ точки - выход('.'):");
     do
